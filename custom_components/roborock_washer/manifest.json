@@ -1,0 +1,19 @@
+{
+  "domain": "roborock_washer",
+  "name": "Roborock Washer",
+  "version": "0.0.1",
+  "documentation": "https://github.com/NOisi-x/hass-roborock-washer",
+  "requirements": [
+    "python-roborock>=3.12.0"
+  ],
+  "dependencies": [],
+  "codeowners": [
+    "@NOisi-x"
+  ],
+  "config_flow": true,
+  "iot_class": "cloud_polling",
+  "loggers": [
+    "roborock_washer"
+  ],
+  "integration_type": "device"
+}

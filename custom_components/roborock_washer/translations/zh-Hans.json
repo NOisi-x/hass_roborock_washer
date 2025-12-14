@@ -1,0 +1,462 @@
+{
+  "entity": {
+    "button": {
+      "start": {
+        "name": "启动"
+      },
+      "pause": {
+        "name": "暂停"
+      },
+      "shutdown": {
+        "name": "停止"
+      }
+    },
+    "sensor": {
+      "washing_left": {
+        "name": "剩余洗涤时间"
+      },
+      "error": {
+        "name": "错误信息"
+      },
+      "times_after_clean": {
+        "name": "上次筒自洁后已运行次数"
+      },
+      "detergent_empty": {
+        "name": "洗涤剂余量低",
+        "state": {
+          "False": "否",
+          "True": "是"
+        }
+      },
+      "state": {
+        "name": "运行状态",
+        "state": {
+          "standby": "待机",
+          "weighing": "称重",
+          "soaking": "浸泡",
+          "washing": "洗涤",
+          "rinsing": "漂洗",
+          "spinning": "脱水",
+          "drying": "烘干",
+          "cooling": "冷却",
+          "under_delay_start": "预约",
+          "done": "完成"
+        }
+      },
+      "mode": {
+        "name": "洗涤模式",
+        "state": {
+          "wash": "洗涤",
+          "wash_and_dry": "洗烘",
+          "dry": "烘干"
+        }
+      },
+      "program": {
+        "name": "洗涤程序",
+        "state": {
+          "standard": "标准",
+          "quick": "快速",
+          "sanitize": "除菌螨",
+          "wool": "羊毛",
+          "air_refresh": "空气洗",
+          "custom": "自定义",
+          "bedding": "家纺",
+          "down": "羽绒",
+          "silk": "丝绸",
+          "rinse_and_spin": "漂+脱",
+          "spin": "单脱水",
+          "down_clean": "羽绒清洁",
+          "baby_care": "婴童装",
+          "anti_allergen": "除螨",
+          "sportswear": "运动",
+          "night": "夜间洗",
+          "new_clothes": "新衣",
+          "shirts": "衬衫",
+          "synthetics": "化纤",
+          "underwear": "内衣",
+          "gentle": "轻柔",
+          "intensive": "强力",
+          "cotton_linen": "棉麻洗",
+          "season": "季节洗",
+          "warming": "温水洗",
+          "bra": "bra",
+          "panties": "内裤",
+          "boiling_wash": "煮洗",
+          "socks": "袜子",
+          "towels": "毛巾",
+          "anti_mite": "除螨",
+          "exo_40_60": "40-60混合洗",
+          "twenty_c": "20°C冷水洗",
+          "t_shirts": "T恤",
+          "stain_removal": "特渍洗"
+        }
+      },
+      "temp": {
+        "name": "洗涤温度",
+        "state": {
+          "normal": "正常",
+          "low": "低",
+          "medium": "中",
+          "high": "高",
+          "max": "最高",
+          "twenty_c": "20°C"
+        }
+      },
+      "rinse_times": {
+        "name": "漂洗次数",
+        "state": {
+          "none": "不漂洗",
+          "min": "1",
+          "low": "2",
+          "mid": "3",
+          "high": "4",
+          "max": "5"
+        }
+      },
+      "spin_level": {
+        "name": "脱水转速",
+        "state": {
+          "none": "无",
+          "very_low": "400RPM",
+          "low": "600RPM",
+          "mid": "800RPM",
+          "high": "1000RPM",
+          "very_high": "1200RPM",
+          "max": "MAX"
+        }
+      },
+      "drying_mode": {
+        "name": "烘干模式",
+        "state": {
+          "none": "不烘干",
+          "quick": "微干",
+          "iron": "普通",
+          "store": "超干"
+        }
+      },
+      "detergent_type": {
+        "name": "洗涤剂自动投放",
+        "state": {
+          "empty": "关闭",
+          "low": "少量",
+          "medium": "标准",
+          "high": "多量"
+        }
+      },
+      "softener_type": {
+        "name": "柔顺剂自动投放"
+      },
+      "countdown": {
+        "name": "预约倒计时"
+      },
+      "sound_set": {
+        "name": "提示音",
+        "state": {
+          "False": "关闭",
+          "True": "开启"
+        }
+      },
+      "child_lock": {
+        "name": "童锁"
+      },
+      "detergent_set": {
+        "name": "洗涤剂设置"
+      },
+      "softener_set": {
+        "name": "柔顺剂设置"
+      }
+    },
+    "switch": {
+      "child_lock": {
+        "name": "童锁"
+      },
+      "sound_set": {
+        "name": "提示音",
+        "state": {
+          "False": "关闭",
+          "True": "开启"
+        }
+      },
+      "detergent_set": {
+        "name": "洗涤剂设置"
+      },
+      "softener_set": {
+        "name": "柔顺剂设置"
+      }
+    },
+    "select": {
+      "mode": {
+        "name": "洗涤模式",
+        "state": {
+          "wash": "洗涤",
+          "wash_and_dry": "洗烘",
+          "dry": "烘干"
+        }
+      },
+      "program": {
+        "name": "洗涤程序",
+        "state": {
+          "standard": "标准",
+          "quick": "快速",
+          "sanitize": "除菌螨",
+          "wool": "羊毛",
+          "air_refresh": "空气洗",
+          "custom": "自定义",
+          "bedding": "家纺",
+          "down": "羽绒",
+          "silk": "丝绸",
+          "rinse_and_spin": "漂+脱",
+          "spin": "单脱水",
+          "down_clean": "羽绒清洁",
+          "baby_care": "婴童装",
+          "anti_allergen": "除螨",
+          "sportswear": "运动",
+          "night": "夜间洗",
+          "new_clothes": "新衣",
+          "shirts": "衬衫",
+          "synthetics": "化纤",
+          "underwear": "内衣",
+          "gentle": "轻柔",
+          "intensive": "强力",
+          "cotton_linen": "棉麻洗",
+          "season": "季节洗",
+          "warming": "温水洗",
+          "bra": "bra",
+          "panties": "内裤",
+          "boiling_wash": "煮洗",
+          "socks": "袜子",
+          "towels": "毛巾",
+          "anti_mite": "除螨",
+          "exo_40_60": "40-60混合洗",
+          "twenty_c": "20°C冷水洗",
+          "t_shirts": "T恤",
+          "stain_removal": "特渍洗"
+        }
+      },
+      "detergent_type": {
+        "name": "智能投放",
+        "state": {
+          "empty": "关闭",
+          "low": "少量",
+          "medium": "标准",
+          "high": "多量"
+        }
+      },
+      "spin_level": {
+        "name": "脱水转速",
+        "state": {
+          "none": "无",
+          "very_low": "400RPM",
+          "low": "600RPM",
+          "mid": "800RPM",
+          "high": "1000RPM",
+          "very_high": "1200RPM",
+          "max": "MAX"
+        }
+      },
+      "temperature": {
+        "name": "洗涤温度",
+        "state": {
+          "normal": "正常",
+          "low": "低",
+          "medium": "中",
+          "high": "高",
+          "max": "最高",
+          "twenty_c": "20°C"
+        }
+      },
+      "rinse_times": {
+        "name": "漂洗次数",
+        "state": {
+          "none": "不漂洗",
+          "min": "1",
+          "low": "2",
+          "mid": "3",
+          "high": "4",
+          "max": "5"
+        }
+      },
+      "drying_mode": {
+        "name": "烘干模式",
+        "state": {
+          "none": "不烘干",
+          "quick": "微干",
+          "iron": "普通",
+          "store": "超干"
+        }
+      }
+    },
+    "number": {
+      "detergent_volume": {
+        "name": "洗涤剂容量"
+      },
+      "softener_volume": {
+        "name": "柔顺剂容量"
+      }
+    }
+  },
+  "services": {
+    "start_wash": {
+      "name": "启动洗涤",
+      "description": "启动洗衣机"
+    },
+    "pause_wash": {
+      "name": "暂停洗涤",
+      "description": "暂停洗衣机"
+    },
+    "stop_wash": {
+      "name": "停止洗涤",
+      "description": "停止洗衣机"
+    },
+    "set_child_lock": {
+      "name": "设置童锁",
+      "description": "启用或禁用童锁",
+      "fields": {
+        "enabled": {
+          "name": "启用",
+          "description": "是否启用童锁"
+        }
+      }
+    },
+    "set_sound": {
+      "name": "设置声音",
+      "description": "启用或禁用声音",
+      "fields": {
+        "enabled": {
+          "name": "启用",
+          "description": "是否启用声音"
+        }
+      }
+    },
+    "set_app_authorization": {
+      "name": "设置应用授权",
+      "description": "启用或禁用应用授权",
+      "fields": {
+        "enabled": {
+          "name": "启用",
+          "description": "是否启用应用授权"
+        }
+      }
+    },
+    "set_detergent": {
+      "name": "设置洗涤剂",
+      "description": "启用或禁用洗涤剂",
+      "fields": {
+        "enabled": {
+          "name": "启用",
+          "description": "是否启用洗涤剂"
+        }
+      }
+    },
+    "set_softener": {
+      "name": "设置柔顺剂",
+      "description": "启用或禁用柔顺剂",
+      "fields": {
+        "enabled": {
+          "name": "启用",
+          "description": "是否启用柔顺剂"
+        }
+      }
+    },
+    "set_light": {
+      "name": "设置灯光",
+      "description": "启用或禁用灯光",
+      "fields": {
+        "enabled": {
+          "name": "启用",
+          "description": "是否启用灯光"
+        }
+      }
+    },
+    "set_mode": {
+      "name": "设置模式",
+      "description": "设置洗涤模式",
+      "fields": {
+        "mode": {
+          "name": "模式",
+          "description": "要设置的洗涤模式"
+        }
+      }
+    },
+    "set_program": {
+      "name": "设置程序",
+      "description": "设置洗涤程序",
+      "fields": {
+        "program": {
+          "name": "程序",
+          "description": "要设置的洗涤程序"
+        }
+      }
+    },
+    "set_temp": {
+      "name": "设置温度",
+      "description": "设置洗涤温度",
+      "fields": {
+        "temp": {
+          "name": "温度",
+          "description": "要设置的洗涤温度"
+        }
+      }
+    },
+    "set_rinse_times": {
+      "name": "设置漂洗次数",
+      "description": "设置漂洗次数",
+      "fields": {
+        "times": {
+          "name": "漂洗次数",
+          "description": "漂洗循环次数"
+        }
+      }
+    },
+    "set_spin_level": {
+      "name": "设置脱水转速",
+      "description": "设置脱水转速",
+      "fields": {
+        "level": {
+          "name": "转速",
+          "description": "要设置的脱水转速"
+        }
+      }
+    },
+    "set_drying_mode": {
+      "name": "设置烘干模式",
+      "description": "设置烘干模式",
+      "fields": {
+        "mode": {
+          "name": "烘干模式",
+          "description": "要设置的烘干模式"
+        }
+      }
+    },
+    "set_detergent_type": {
+      "name": "设置洗涤剂类型",
+      "description": "设置洗涤剂类型",
+      "fields": {
+        "type": {
+          "name": "洗涤剂类型",
+          "description": "要设置的洗涤剂类型"
+        }
+      }
+    },
+    "set_softener_type": {
+      "name": "设置柔顺剂类型",
+      "description": "设置柔顺剂类型",
+      "fields": {
+        "type": {
+          "name": "柔顺剂类型",
+          "description": "要设置的柔顺剂类型"
+        }
+      }
+    },
+    "set_countdown": {
+      "name": "设置倒计时",
+      "description": "设置倒计时定时器",
+      "fields": {
+        "minutes": {
+          "name": "分钟",
+          "description": "倒计时时间（分钟）"
+        }
+      }
+    }
+  }
+}

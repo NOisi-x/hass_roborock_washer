@@ -1,0 +1,484 @@
+{
+  "entity": {
+    "button": {
+      "start": {
+        "name": "Start"
+      },
+      "pause": {
+        "name": "Pause"
+      },
+      "shutdown": {
+        "name": "Shutdown"
+      },
+      "custom_param_save": {
+        "name": "Save Custom Parameters"
+      },
+      "default_setting": {
+        "name": "Reset to Default Settings"
+      }
+    },
+    "sensor": {
+      },
+      "washing_left": {
+        "name": "Washing Left"
+      },
+      "doorlock_state": {
+        "name": "Door Lock State"
+      },
+      "error": {
+        "name": "Error"
+      },
+      "custom_param_get": {
+        "name": "Custom Parameters"
+      },
+      "times_after_clean": {
+        "name": "Times After Clean"
+      },
+      "detergent_empty": {
+        "name": "Detergent Empty",
+        "state": {
+          "False": "No",
+          "True": "Yes"
+        }
+      },
+      "softener_empty": {
+        "name": "Softener Empty"
+      },
+      "state": {
+        "name": "State",
+        "state": {
+          "standby": "Standby",
+          "weighing": "Weighing",
+          "soaking": "Soaking",
+          "washing": "Washing",
+          "rinsing": "Rinsing",
+          "spinning": "Spinning",
+          "drying": "Drying",
+          "cooling": "Cooling",
+          "under_delay_start": "Delayed Start",
+          "done": "Done"
+        }
+      },
+      "mode": {
+        "name": "Mode",
+        "state": {
+          "wash": "Wash",
+          "wash_and_dry": "Wash and Dry",
+          "dry": "Dry"
+        }
+      },
+      "program": {
+        "name": "Program",
+        "state": {
+          "standard": "Standard",
+          "quick": "Quick",
+          "sanitize": "Sanitize",
+          "wool": "Wool",
+          "air_refresh": "Air Refresh",
+          "custom": "Custom",
+          "bedding": "Bedding",
+          "down": "Down",
+          "silk": "Silk",
+          "rinse_and_spin": "Rinse and Spin",
+          "spin": "Spin",
+          "down_clean": "Down Clean",
+          "baby_care": "Baby Care",
+          "anti_allergen": "Anti Allergen",
+          "sportswear": "Sportswear",
+          "night": "Night",
+          "new_clothes": "New Clothes",
+          "shirts": "Shirts",
+          "synthetics": "Synthetics",
+          "underwear": "Underwear",
+          "gentle": "Gentle",
+          "intensive": "Intensive",
+          "cotton_linen": "Cotton Linen",
+          "season": "Season",
+          "warming": "Warming",
+          "bra": "Bra",
+          "panties": "Panties",
+          "boiling_wash": "Boiling Wash",
+          "socks": "Socks",
+          "towels": "Towels",
+          "anti_mite": "Anti Mite",
+          "exo_40_60": "Exo 40-60",
+          "twenty_c": "20°C",
+          "t_shirts": "T-Shirts",
+          "stain_removal": "Stain Removal"
+        }
+      },
+      "temp": {
+        "name": "Temperature",
+        "state": {
+          "normal": "Normal",
+          "low": "Low",
+          "medium": "Medium",
+          "high": "High",
+          "max": "Max",
+          "twenty_c": "20°C Cold"
+        }
+      },
+      "rinse_times": {
+        "name": "Rinse Times",
+        "state": {
+          "none": "No Rinse",
+          "min": "Minimum",
+          "low": "Low",
+          "mid": "Medium",
+          "high": "High",
+          "max": "Maximum"
+        }
+      },
+      "spin_level": {
+        "name": "Spin Level",
+        "state": {
+          "none": "No Spin",
+          "very_low": "Very Low",
+          "low": "Low",
+          "mid": "Medium",
+          "high": "High",
+          "very_high": "Very High",
+          "max": "Max Speed"
+        }
+      },
+      "drying_mode": {
+        "name": "Drying Mode",
+        "state": {
+          "none": "No Drying",
+          "quick": "Slightly Dry",
+          "iron": "Normal",
+          "store": "Extra Dry"
+        }
+      },
+      "detergent_type": {
+        "name": "Detergent Type",
+        "state": {
+          "empty": "Off",
+          "low": "Low",
+          "medium": "Medium",
+          "high": "High"
+        }
+      },
+      "softener_type": {
+        "name": "Softener Type"
+      },
+      "countdown": {
+        "name": "Countdown"
+      },
+      "detergent_volume": {
+        "name": "Detergent Volume"
+      },
+      "softener_volume": {
+        "name": "Softener Volume"
+      }
+    },
+    "switch": {
+      "child_lock": {
+        "name": "Child Lock"
+      },
+      "sound_set": {
+        "name": "Sound Set",
+        "state": {
+          "False": "Off",
+          "True": "On"
+        }
+      },
+      "app_authorization": {
+        "name": "App Authorization"
+      },
+      "detergent_set": {
+        "name": "Detergent Setting"
+      },
+      "softener_set": {
+        "name": "Softener Setting"
+      }
+    },
+    "select": {
+      "mode": {
+        "name": "Washing Mode",
+        "state": {
+          "wash": "Wash",
+          "wash_and_dry": "Wash and Dry",
+          "dry": "Dry"
+        }
+      },
+      "program": {
+        "name": "Washing Program",
+        "state": {
+          "standard": "Standard",
+          "quick": "Quick",
+          "sanitize": "Sanitize",
+          "wool": "Wool",
+          "air_refresh": "Air Refresh",
+          "custom": "Custom",
+          "bedding": "Bedding",
+          "down": "Down",
+          "silk": "Silk",
+          "rinse_and_spin": "Rinse and Spin",
+          "spin": "Spin",
+          "down_clean": "Down Clean",
+          "baby_care": "Baby Care",
+          "anti_allergen": "Anti Allergen",
+          "sportswear": "Sportswear",
+          "night": "Night",
+          "new_clothes": "New Clothes",
+          "shirts": "Shirts",
+          "synthetics": "Synthetics",
+          "underwear": "Underwear",
+          "gentle": "Gentle",
+          "intensive": "Intensive",
+          "cotton_linen": "Cotton Linen",
+          "season": "Season",
+          "warming": "Warming",
+          "bra": "Bra",
+          "panties": "Panties",
+          "boiling_wash": "Boiling Wash",
+          "socks": "Socks",
+          "towels": "Towels",
+          "anti_mite": "Anti Mite",
+          "exo_40_60": "Exo 40-60",
+          "twenty_c": "20°C",
+          "t_shirts": "T-Shirts",
+          "stain_removal": "Stain Removal"
+        }
+      },
+      "detergent_type": {
+        "name": "Detergent Type"
+      },
+      "spin_level": {
+        "name": "Spin Level"
+      },
+
+      "temp": {
+        "name": "Temperature",
+        "state": {
+          "normal": "Normal",
+          "low": "Low",
+          "medium": "Medium",
+          "high": "High",
+          "max": "Max",
+          "twenty_c": "20°C Cold"
+        }
+      },
+      "rinse_times": {
+        "name": "Rinse Times",
+        "state": {
+          "none": "0",
+          "min": "1",
+          "low": "2",
+          "mid": "3",
+          "high": "4",
+          "max": "5"
+        }
+      },
+      "drying_mode": {
+        "name": "Drying Mode",
+        "state": {
+          "none": "No Drying",
+          "quick": "Slightly Dry",
+          "iron": "Normal",
+          "store": "Extra Dry"
+        }
+      }
+    },
+    "number": {
+      "detergent_volume": {
+        "name": "Detergent Volume"
+      },
+      "softener_volume": {
+        "name": "Softener Volume"
+      }
+    },
+  "services": {
+    "start_wash": {
+      "name": "Start Wash",
+      "description": "Start the washing machine"
+    },
+    "pause_wash": {
+      "name": "Pause Wash",
+      "description": "Pause the washing machine"
+    },
+    "stop_wash": {
+      "name": "Stop Wash",
+      "description": "Stop the washing machine"
+    },
+    "set_child_lock": {
+      "name": "Set Child Lock",
+      "description": "Enable or disable child lock",
+      "fields": {
+        "enabled": {
+          "name": "Enabled",
+          "description": "Whether to enable child lock"
+        }
+      }
+    },
+    "set_sound": {
+      "name": "Set Sound",
+      "description": "Enable or disable sound",
+      "fields": {
+        "enabled": {
+          "name": "Enabled",
+          "description": "Whether to enable sound"
+        }
+      }
+    },
+    "set_app_authorization": {
+      "name": "Set App Authorization",
+      "description": "Enable or disable app authorization",
+      "fields": {
+        "enabled": {
+          "name": "Enabled",
+          "description": "Whether to enable app authorization"
+        }
+      }
+    },
+    "set_detergent": {
+      "name": "Set Detergent",
+      "description": "Enable or disable detergent",
+      "fields": {
+        "enabled": {
+          "name": "Enabled",
+          "description": "Whether to enable detergent"
+        }
+      }
+    },
+    "set_softener": {
+      "name": "Set Softener",
+      "description": "Enable or disable softener",
+      "fields": {
+        "enabled": {
+          "name": "Enabled",
+          "description": "Whether to enable softener"
+        }
+      }
+    },
+    "set_light": {
+      "name": "Set Light",
+      "description": "Enable or disable light",
+      "fields": {
+        "enabled": {
+          "name": "Enabled",
+          "description": "Whether to enable light"
+        }
+      }
+    },
+    "set_mode": {
+      "name": "Set Mode",
+      "description": "Set washing mode",
+      "fields": {
+        "mode": {
+          "name": "Mode",
+          "description": "Washing mode to set"
+        }
+      }
+    },
+    "set_program": {
+      "name": "Set Program",
+      "description": "Set washing program",
+      "fields": {
+        "program": {
+          "name": "Program",
+          "description": "Washing program to set"
+        }
+      }
+    },
+    "set_temp": {
+      "name": "Set Temperature",
+      "description": "Set washing temperature",
+      "fields": {
+        "temp": {
+          "name": "Temperature",
+          "description": "Washing temperature to set"
+        }
+      }
+    },
+    "set_rinse_times": {
+      "name": "Set Rinse Times",
+      "description": "Set rinse times",
+      "fields": {
+        "times": {
+          "name": "Rinse Times",
+          "description": "Number of rinse cycles"
+        }
+      }
+    },
+    "set_spin_level": {
+      "name": "Set Spin Level",
+      "description": "Set spin level",
+      "fields": {
+        "level": {
+          "name": "Spin Level",
+          "description": "Spin level to set"
+        }
+      }
+    },
+    "set_drying_mode": {
+      "name": "Set Drying Mode",
+      "description": "Set drying mode",
+      "fields": {
+        "mode": {
+          "name": "Drying Mode",
+          "description": "Drying mode to set"
+        }
+      }
+    },
+    "set_detergent_type": {
+      "name": "Set Detergent Type",
+      "description": "Set detergent type",
+      "fields": {
+        "type": {
+          "name": "Detergent Type",
+          "description": "Detergent type to set"
+        }
+      }
+    },
+    "set_softener_type": {
+      "name": "Set Softener Type",
+      "description": "Set softener type",
+      "fields": {
+        "type": {
+          "name": "Softener Type",
+          "description": "Softener type to set"
+        }
+      }
+    },
+    "set_countdown": {
+      "name": "Set Countdown",
+      "description": "Set countdown timer",
+      "fields": {
+        "minutes": {
+          "name": "Minutes",
+          "description": "Countdown time in minutes"
+        }
+      }
+    },
+    "custom_param_save": {
+      "name": "Save Custom Parameters",
+      "description": "Save current settings as custom parameters"
+    },
+    "default_setting": {
+      "name": "Reset to Default Settings",
+      "description": "Reset washer to default settings"
+    },
+    "set_detergent_volume": {
+      "name": "Set Detergent Volume",
+      "description": "Set detergent volume",
+      "fields": {
+        "volume": {
+          "name": "Volume",
+          "description": "Detergent volume to set"
+        }
+      }
+    },
+    "set_softener_volume": {
+      "name": "Set Softener Volume",
+      "description": "Set softener volume",
+      "fields": {
+        "volume": {
+          "name": "Volume",
+          "description": "Softener volume to set"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,322 @@
+start_wash:
+  name: Start Wash
+  description: Start the washing machine
+  target:
+    entity:
+      integration: roborock_washer
+      domain: button
+
+pause_wash:
+  name: Pause Wash
+  description: Pause the washing machine
+  target:
+    entity:
+      integration: roborock_washer
+      domain: button
+
+stop_wash:
+  name: Stop Wash
+  description: Stop the washing machine
+  target:
+    entity:
+      integration: roborock_washer
+      domain: button
+
+# set_child_lock:
+#   name: Set Child Lock
+#   description: Enable or disable child lock
+#   target:
+#     entity:
+#       integration: roborock_washer
+#       domain: switch
+#   fields:
+#     enabled:
+#       name: Enabled
+#       description: Whether to enable child lock
+#       example: true
+#       required: true
+#       selector:
+#         boolean:
+
+set_sound:
+  name: Set Sound
+  description: Enable or disable sound
+  target:
+    entity:
+      integration: roborock_washer
+      domain: switch
+  fields:
+    enabled:
+      name: Enabled
+      description: Whether to enable sound
+      example: true
+      required: true
+      selector:
+        boolean:
+
+set_app_authorization:
+  name: Set App Authorization
+  description: Enable or disable app authorization
+  target:
+    entity:
+      integration: roborock_washer
+      domain: switch
+  fields:
+    enabled:
+      name: Enabled
+      description: Whether to enable app authorization
+      example: true
+      required: true
+      selector:
+        boolean:
+
+# set_detergent:
+#   name: Set Detergent
+#   description: Enable or disable detergent
+#   target:
+#     entity:
+#       integration: roborock_washer
+#       domain: switch
+#   fields:
+#     enabled:
+#       name: Enabled
+#       description: Whether to enable detergent
+#       example: true
+#       required: true
+#       selector:
+#         boolean:
+
+# set_softener:
+#   name: Set Softener
+#   description: Enable or disable softener
+#   target:
+#     entity:
+#       integration: roborock_washer
+#       domain: switch
+#   fields:
+#     enabled:
+#       name: Enabled
+#       description: Whether to enable softener
+#       example: true
+#       required: true
+#       selector:
+#         boolean:
+
+set_light:
+  name: Set Light
+  description: Enable or disable light
+  target:
+    entity:
+      integration: roborock_washer
+      domain: switch
+  fields:
+    enabled:
+      name: Enabled
+      description: Whether to enable light
+      example: true
+      required: true
+      selector:
+        boolean:
+
+set_mode:
+  name: Set Mode
+  description: Set washing mode
+  target:
+    entity:
+      integration: roborock_washer
+  fields:
+    mode:
+      name: Mode
+      description: Washing mode to set
+      example: "daily_wash"
+      required: true
+      selector:
+        text:
+
+set_program:
+  name: Set Program
+  description: Set washing program
+  target:
+    entity:
+      integration: roborock_washer
+  fields:
+    program:
+      name: Program
+      description: Washing program to set
+      example: "normal"
+      required: true
+      selector:
+        text:
+
+set_temp:
+  name: Set Temperature
+  description: Set washing temperature
+  target:
+    entity:
+      integration: roborock_washer
+  fields:
+    temp:
+      name: Temperature
+      description: Washing temperature to set
+      example: 40
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 90
+          unit_of_measurement: "°C"
+
+set_rinse_times:
+  name: Set Rinse Times
+  description: Set rinse times
+  target:
+    entity:
+      integration: roborock_washer
+  fields:
+    times:
+      name: Rinse Times
+      description: Number of rinse cycles
+      example: 2
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 5
+          step: 1
+
+set_spin_level:
+  name: Set Spin Level
+  description: Set spin level
+  target:
+    entity:
+      integration: roborock_washer
+  fields:
+    level:
+      name: Spin Level
+      description: Spin level to set
+      example: 800
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 1400
+          step: 100
+          unit_of_measurement: "RPM"
+
+set_drying_mode:
+  name: Set Drying Mode
+  description: Set drying mode
+  target:
+    entity:
+      integration: roborock_washer
+  fields:
+    mode:
+      name: Drying Mode
+      description: Drying mode to set
+      example: "standard"
+      required: true
+      selector:
+        text:
+
+set_detergent_type:
+  name: Set Detergent Type
+  description: Set detergent type
+  target:
+    entity:
+      integration: roborock_washer
+  fields:
+    type:
+      name: Detergent Type
+      description: Detergent type to set
+      example: "liquid"
+      required: true
+      selector:
+        text:
+
+# set_softener_type:
+#   name: Set Softener Type
+#   description: Set softener type
+#   target:
+#     entity:
+#       integration: roborock_washer
+#   fields:
+#     type:
+#       name: Softener Type
+#       description: Softener type to set
+#       example: "liquid"
+#       required: true
+#       selector:
+#         text:
+
+set_countdown:
+  name: Set Countdown
+  description: Set countdown timer
+  target:
+    entity:
+      integration: roborock_washer
+  fields:
+    minutes:
+      name: Minutes
+      description: Countdown time in minutes
+      example: 30
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 1440
+          step: 1
+          unit_of_measurement: "minutes"
+
+# custom_param_save:
+#   name: Save Custom Parameters
+#   description: Save current settings as custom parameters
+#   target:
+#     entity:
+#       integration: roborock_washer
+#       domain: button
+
+# default_setting:
+#   name: Reset to Default Settings
+#   description: Reset washer to default settings
+#   target:
+#     entity:
+#       integration: roborock_washer
+#       domain: button
+
+# set_detergent_volume:
+#   name: Set Detergent Volume
+#   description: Set detergent volume
+#   target:
+#     entity:
+#       integration: roborock_washer
+#   fields:
+#     volume:
+#       name: Volume
+#       description: Detergent volume to set
+#       example: 100
+#       required: true
+#       selector:
+#         number:
+#           min: 0
+#           max: 500
+#           step: 10
+#           unit_of_measurement: "ml"
+
+# set_softener_volume:
+#   name: Set Softener Volume
+#   description: Set softener volume
+#   target:
+#     entity:
+#       integration: roborock_washer
+#   fields:
+#     volume:
+#       name: Volume
+#       description: Softener volume to set
+#       example: 100
+#       required: true
+#       selector:
+#         number:
+#           min: 0
+#           max: 500
+#           step: 10
+#           unit_of_measurement: "ml"
