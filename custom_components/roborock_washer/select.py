@@ -246,7 +246,6 @@ SELECT_TYPES: tuple[RoborockWasherSelectDescription, ...] = (
     # 洗涤模式选择实体
     RoborockWasherSelectDescription(
         key="mode",                    # 实体唯一标识符
-        name=None,                     # 使用翻译文件中的名称
         icon="mdi:tune-vertical",      # 实体图标
         data_protocol=MODE,            # 关联的设备协议
         options_map=MODE_OPTIONS,      # 选项映射
@@ -255,7 +254,6 @@ SELECT_TYPES: tuple[RoborockWasherSelectDescription, ...] = (
     # 洗涤程序选择实体
     RoborockWasherSelectDescription(
         key="program",                 # 实体唯一标识符
-        name=None,                     # 使用翻译文件中的名称
         icon="mdi:playlist-play",      # 实体图标
         data_protocol=PROGRAM,         # 关联的设备协议
         options_map=PROGRAM_OPTIONS,   # 选项映射
@@ -264,7 +262,6 @@ SELECT_TYPES: tuple[RoborockWasherSelectDescription, ...] = (
     # 洗涤剂类型选择实体
     RoborockWasherSelectDescription(
         key="detergent_type",          # 实体唯一标识符
-        name=None,                     # 使用翻译文件中的名称
         icon="mdi:sprinkler-variant",  # 实体图标
         data_protocol=DETERGENT_TYPE,  # 关联的设备协议
         options_map=DETERGENT_TYPE_OPTIONS,  # 选项映射
@@ -273,7 +270,6 @@ SELECT_TYPES: tuple[RoborockWasherSelectDescription, ...] = (
     # 温度设置选择实体
     RoborockWasherSelectDescription(
         key="temperature",             # 实体唯一标识符
-        name=None,                     # 使用翻译文件中的名称
         icon="mdi:thermometer",        # 实体图标
         data_protocol=TEMP,            # 关联的设备协议
         options_map=TEMP_OPTIONS,      # 选项映射
@@ -282,7 +278,6 @@ SELECT_TYPES: tuple[RoborockWasherSelectDescription, ...] = (
     # 脱水转速选择实体
     RoborockWasherSelectDescription(
         key="spin_level",              # 实体唯一标识符
-        name=None,                     # 使用翻译文件中的名称
         icon="mdi:fast-forward",       # 实体图标
         data_protocol=SPIN_LEVEL,      # 关联的设备协议
         options_map=SPIN_LEVEL_OPTIONS,      # 选项映射
@@ -291,7 +286,6 @@ SELECT_TYPES: tuple[RoborockWasherSelectDescription, ...] = (
     # 漂洗次数选择实体
     RoborockWasherSelectDescription(
         key="rinse_times",             # 实体唯一标识符
-        name=None,                     # 使用翻译文件中的名称
         icon="mdi:refresh",            # 实体图标
         data_protocol=RINSE_TIMES,     # 关联的设备协议
         options_map=RINSE_TIMES_OPTIONS,     # 选项映射
@@ -300,7 +294,6 @@ SELECT_TYPES: tuple[RoborockWasherSelectDescription, ...] = (
     # 烘干模式选择实体
     RoborockWasherSelectDescription(
         key="drying_mode",             # 实体唯一标识符
-        name=None,                     # 使用翻译文件中的名称
         icon="mdi:tumble-dryer",       # 实体图标
         data_protocol=DRYING_MODE,     # 关联的设备协议
         options_map=DRYING_MODE_OPTIONS,     # 选项映射
@@ -365,11 +358,13 @@ class RoborockWasherSelect(RoborockWasherApiEntity, SelectEntity):
             description: 实体描述对象，定义实体的配置信息
         """
         # 调用父类初始化方法，传入协调器和关联的协议
-        super().__init__(coordinator, description.data_protocol)
+        protocol = description.data_protocol if description.data_protocol else description.key
+        super().__init__(coordinator, protocol)
         # 保存实体描述对象
         self.entity_description = description
         # 设置实体的唯一标识符
-        self._attr_unique_id = f"{coordinator.model}_{description.data_protocol.lower()}"
+        protocol_name = description.data_protocol.lower() if description.data_protocol else description.key
+        self._attr_unique_id = f"{coordinator.model}_{protocol_name}"
         # 根据是否有翻译键设置实体名称
         if description.translation_key:
             self._attr_translation_key = description.translation_key
@@ -511,8 +506,9 @@ class RoborockWasherSelect(RoborockWasherApiEntity, SelectEntity):
             await super().async_set_value(value)
             
             # 对于所有选择实体，请求立即刷新此特定协议的状态
-            _LOGGER.debug("Requesting immediate update for %s protocol", self.entity_description.data_protocol)
-            await self.coordinator.async_query_protocol(self.entity_description.data_protocol.lower())
+            protocol_name = self.entity_description.data_protocol.lower() if self.entity_description.data_protocol else self.entity_description.key
+            _LOGGER.debug("Requesting immediate update for %s protocol", protocol_name)
+            await self.coordinator.async_query_protocol(protocol_name)
             
             # 强制更新实体状态
             self.async_write_ha_state()

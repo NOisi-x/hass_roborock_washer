@@ -74,7 +74,6 @@ SWITCH_TYPES: tuple[RoborockWasherSwitchDescription, ...] = (
     # 声音设置开关实体（当前唯一支持的开关实体）
     RoborockWasherSwitchDescription(
         key="sound_set",               # 实体唯一标识符
-        name=None,                     # 使用翻译文件中的名称
         icon="mdi:volume-high",        # 实体图标
         device_class=SwitchDeviceClass.SWITCH,  # 设备类别
         data_protocol=SOUND_SET,       # 关联的设备协议

@@ -67,7 +67,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 设备状态传感器
     SensorEntityDescription(
         key=STATE,                           # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:washing-machine",          # 传感器图标
         translation_key="state",             # 翻译键
     ),
@@ -75,7 +74,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 倒计时传感器
     SensorEntityDescription(
         key=COUNTDOWN,                       # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:timer-outline",            # 传感器图标
         native_unit_of_measurement=UnitOfTime.MINUTES,  # 单位：分钟
         translation_key="countdown",         # 翻译键
@@ -84,7 +82,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 剩余洗涤时间传感器
     SensorEntityDescription(
         key=WASHING_LEFT,                    # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:progress-clock",           # 传感器图标
         native_unit_of_measurement=UnitOfTime.MINUTES,  # 单位：分钟
         translation_key="washing_left",      # 翻译键
@@ -93,7 +90,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 错误状态传感器
     SensorEntityDescription(
         key=ERROR,                           # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:alert-circle",             # 传感器图标
         translation_key="error",             # 翻译键
     ),
@@ -101,7 +97,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 清洁后使用次数传感器
     SensorEntityDescription(
         key=TIMES_AFTER_CLEAN,               # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:counter",                  # 传感器图标
         state_class=SensorStateClass.MEASUREMENT,  # 测量状态类别
         translation_key="times_after_clean", # 翻译键
@@ -110,7 +105,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 洗涤剂空状态传感器
     SensorEntityDescription(
         key=DETERGENT_EMPTY,                 # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:alert",                    # 传感器图标
         translation_key="detergent_empty",   # 翻译键
     ),
@@ -118,7 +112,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 烘干模式传感器
     SensorEntityDescription(
         key=DRYING_MODE,                     # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:tumble-dryer",             # 传感器图标
         translation_key="drying_mode",       # 翻译键
     ),
@@ -126,7 +119,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 声音设置传感器
     SensorEntityDescription(
         key=SOUND_SET,                       # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:volume-high",              # 传感器图标
         translation_key="sound_set",         # 翻译键
     ),
@@ -134,7 +126,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 温度传感器
     SensorEntityDescription(
         key=TEMP,                            # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:thermometer",              # 传感器图标
         translation_key="temp",              # 翻译键
     ),
@@ -142,7 +133,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 脱水等级传感器
     SensorEntityDescription(
         key=SPIN_LEVEL,                      # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:rotate-left",              # 传感器图标
         translation_key="spin_level",        # 翻译键
     ),
@@ -150,7 +140,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 洗涤剂类型传感器
     SensorEntityDescription(
         key=DETERGENT_TYPE,                  # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:bottle-tonic-outline",     # 传感器图标
         translation_key="detergent_type",    # 翻译键
     ),
@@ -158,7 +147,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 漂洗次数传感器
     SensorEntityDescription(
         key=RINSE_TIMES,                     # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:water-outline",            # 传感器图标
         translation_key="rinse_times",       # 翻译键
     ),
@@ -166,7 +154,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 模式传感器
     SensorEntityDescription(
         key=MODE,                            # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:tune",                     # 传感器图标
         translation_key="mode",              # 翻译键
     ),
@@ -174,7 +161,6 @@ SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
     # 程序传感器
     SensorEntityDescription(
         key=PROGRAM,                         # 传感器唯一标识符
-        name=None,                           # 使用翻译文件中的名称
         icon="mdi:playlist-play",            # 传感器图标
         translation_key="program",           # 翻译键
     ),
