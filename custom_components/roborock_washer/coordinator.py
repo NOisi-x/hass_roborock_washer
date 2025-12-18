@@ -58,12 +58,14 @@ class RoborockWasherDataUpdateCoordinator(DataUpdateCoordinator[Dict[str, Any]])
         self.zeo_api = api
         # 存储当前设备数据
         self.data = {}
+        # 获取设备型号
+        self._model = device.product.model if hasattr(device, 'product') else getattr(device, 'model', 'Unknown')
         # 设备信息，用于在Home Assistant中注册设备
         self.device_info = DeviceInfo(
             identifiers={((DOMAIN, device.duid))},
             name=device.name,
             manufacturer="Roborock",
-            model=device.product.model if hasattr(device, 'product') else getattr(device, 'model', 'Unknown'),
+            model=self._model,
             sw_version=getattr(device.device_info, 'fw_ver', getattr(device, 'firmware_version', 'Unknown')),
         )
         # 设备唯一标识符
@@ -131,6 +133,11 @@ class RoborockWasherDataUpdateCoordinator(DataUpdateCoordinator[Dict[str, Any]])
     def duid(self):
         """Return the device unique ID."""
         return self._duid
+
+    @property
+    def model(self):
+        """Return the device model."""
+        return self._model
 
     async def _async_update_data(self) -> Dict[str, Any]:
         """Fetch data from Roborock API."""

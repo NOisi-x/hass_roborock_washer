@@ -137,7 +137,7 @@ class RoborockWasherButton(RoborockWasherApiEntity, ButtonEntity):
         self.entity_description = description
         
         # 生成此实体的唯一标识符
-        self._attr_unique_id = f"{DOMAIN}_{coordinator.duid}_button_{description.key}"
+        self._attr_unique_id = f"{coordinator.model}_{description.data_protocol.lower()}"
         
         # 使用翻译键配置实体命名以支持本地化
         if description.translation_key:

@@ -234,7 +234,7 @@ class RoborockWasherSensor(RoborockWasherApiEntity, SensorEntity):
         # 保存实体描述对象
         self.entity_description = description
         # 设置实体的唯一标识符
-        self._attr_unique_id = f"{DOMAIN}_{coordinator.duid}_sensor_{description.key}"
+        self._attr_unique_id = f"{coordinator.model}_{description.key}"
     
     @property
     def native_value(self) -> Optional[Any]:

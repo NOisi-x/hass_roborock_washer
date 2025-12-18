@@ -369,7 +369,7 @@ class RoborockWasherSelect(RoborockWasherApiEntity, SelectEntity):
         # 保存实体描述对象
         self.entity_description = description
         # 设置实体的唯一标识符
-        self._attr_unique_id = f"{DOMAIN}_{coordinator.duid}_select_{description.key}"
+        self._attr_unique_id = f"{coordinator.model}_{description.data_protocol.lower()}"
         # 根据是否有翻译键设置实体名称
         if description.translation_key:
             self._attr_translation_key = description.translation_key
