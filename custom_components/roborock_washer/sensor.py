@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import logging
+from dataclasses import dataclass
 from typing import Any, Optional
 
 from homeassistant.components.sensor import (
@@ -30,6 +31,18 @@ from .coordinator import RoborockWasherDataUpdateCoordinator
 from .entity import RoborockWasherApiEntity
 
 _LOGGER = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True, kw_only=True)
+class RoborockWasherSensorDescription(SensorEntityDescription):
+    """Roborock洗衣机传感器描述类。
+    
+    该数据类扩展了Home Assistant的SensorEntityDescription，添加了与Roborock洗衣机
+    特定协议相关的属性，用于描述传感器的功能和行为。
+    """
+    # 与传感器关联的设备协议名称
+    data_protocol: str
+
 
 # 定义Zeo协议值作为字符串，使用小写以匹配coordinator中的存储格式
 # 设备基本状态协议
@@ -63,104 +76,118 @@ PROGRAM = "program"          # 程序
 
 # 定义所有支持的传感器实体描述
 # 每个传感器描述包含关键属性：唯一标识符、图标、单位、设备类别、状态类别和翻译键
-SENSOR_DESCRIPTIONS: list[SensorEntityDescription] = [
+SENSOR_DESCRIPTIONS: list[RoborockWasherSensorDescription] = [
     # 设备状态传感器
-    SensorEntityDescription(
-        key=STATE,                           # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="state",                           # 传感器唯一标识符
+        data_protocol=STATE,                   # 传感器协议
         icon="mdi:washing-machine",          # 传感器图标
         translation_key="state",             # 翻译键
     ),
     
     # 倒计时传感器
-    SensorEntityDescription(
-        key=COUNTDOWN,                       # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="countdown",                       # 传感器唯一标识符
+        data_protocol=COUNTDOWN,               # 传感器协议
         icon="mdi:timer-outline",            # 传感器图标
         native_unit_of_measurement=UnitOfTime.MINUTES,  # 单位：分钟
         translation_key="countdown",         # 翻译键
     ),
     
     # 剩余洗涤时间传感器
-    SensorEntityDescription(
-        key=WASHING_LEFT,                    # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="washing_left",                    # 传感器唯一标识符
+        data_protocol=WASHING_LEFT,            # 传感器协议
         icon="mdi:progress-clock",           # 传感器图标
         native_unit_of_measurement=UnitOfTime.MINUTES,  # 单位：分钟
         translation_key="washing_left",      # 翻译键
     ),
     
     # 错误状态传感器
-    SensorEntityDescription(
-        key=ERROR,                           # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="error",                           # 传感器唯一标识符
+        data_protocol=ERROR,                   # 传感器协议
         icon="mdi:alert-circle",             # 传感器图标
         translation_key="error",             # 翻译键
     ),
     
     # 清洁后使用次数传感器
-    SensorEntityDescription(
-        key=TIMES_AFTER_CLEAN,               # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="times_after_clean",               # 传感器唯一标识符
+        data_protocol=TIMES_AFTER_CLEAN,       # 传感器协议
         icon="mdi:counter",                  # 传感器图标
         state_class=SensorStateClass.MEASUREMENT,  # 测量状态类别
         translation_key="times_after_clean", # 翻译键
     ),
     
     # 洗涤剂空状态传感器
-    SensorEntityDescription(
-        key=DETERGENT_EMPTY,                 # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="detergent_empty",                 # 传感器唯一标识符
+        data_protocol=DETERGENT_EMPTY,         # 传感器协议
         icon="mdi:alert",                    # 传感器图标
         translation_key="detergent_empty",   # 翻译键
     ),
     
     # 烘干模式传感器
-    SensorEntityDescription(
-        key=DRYING_MODE,                     # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="drying_mode",                     # 传感器唯一标识符
+        data_protocol=DRYING_MODE,             # 传感器协议
         icon="mdi:tumble-dryer",             # 传感器图标
         translation_key="drying_mode",       # 翻译键
     ),
     
     # 声音设置传感器
-    SensorEntityDescription(
-        key=SOUND_SET,                       # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="sound_set",                       # 传感器唯一标识符
+        data_protocol=SOUND_SET,               # 传感器协议
         icon="mdi:volume-high",              # 传感器图标
         translation_key="sound_set",         # 翻译键
     ),
     
     # 温度传感器
-    SensorEntityDescription(
-        key=TEMP,                            # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="temp",                            # 传感器唯一标识符
+        data_protocol=TEMP,                    # 传感器协议
         icon="mdi:thermometer",              # 传感器图标
         translation_key="temp",              # 翻译键
     ),
     
     # 脱水等级传感器
-    SensorEntityDescription(
-        key=SPIN_LEVEL,                      # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="spin_level",                      # 传感器唯一标识符
+        data_protocol=SPIN_LEVEL,              # 传感器协议
         icon="mdi:rotate-left",              # 传感器图标
         translation_key="spin_level",        # 翻译键
     ),
     
     # 洗涤剂类型传感器
-    SensorEntityDescription(
-        key=DETERGENT_TYPE,                  # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="detergent_type",                  # 传感器唯一标识符
+        data_protocol=DETERGENT_TYPE,          # 传感器协议
         icon="mdi:bottle-tonic-outline",     # 传感器图标
         translation_key="detergent_type",    # 翻译键
     ),
     
     # 漂洗次数传感器
-    SensorEntityDescription(
-        key=RINSE_TIMES,                     # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="rinse_times",                     # 传感器唯一标识符
+        data_protocol=RINSE_TIMES,             # 传感器协议
         icon="mdi:water-outline",            # 传感器图标
         translation_key="rinse_times",       # 翻译键
     ),
     
     # 模式传感器
-    SensorEntityDescription(
-        key=MODE,                            # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="mode",                            # 传感器唯一标识符
+        data_protocol=MODE,                    # 传感器协议
         icon="mdi:tune",                     # 传感器图标
         translation_key="mode",              # 翻译键
     ),
     
     # 程序传感器
-    SensorEntityDescription(
-        key=PROGRAM,                         # 传感器唯一标识符
+    RoborockWasherSensorDescription(
+        key="program",                         # 传感器唯一标识符
+        data_protocol=PROGRAM,                 # 传感器协议
         icon="mdi:playlist-play",            # 传感器图标
         translation_key="program",           # 翻译键
     ),
@@ -208,7 +235,10 @@ class RoborockWasherSensor(RoborockWasherApiEntity, SensorEntity):
     实现了与Roborock洗衣机设备交互的传感器实体功能，用于显示设备的各种状态信息。
     """
 
-    def __init__(self, coordinator: RoborockWasherDataUpdateCoordinator, description: SensorEntityDescription) -> None:
+    # 实体描述的类型提示
+    entity_description: RoborockWasherSensorDescription
+
+    def __init__(self, coordinator: RoborockWasherDataUpdateCoordinator, description: RoborockWasherSensorDescription) -> None:
         """初始化Roborock洗衣机传感器实体。
         
         Args:
@@ -216,11 +246,11 @@ class RoborockWasherSensor(RoborockWasherApiEntity, SensorEntity):
             description: 传感器实体描述对象，定义传感器的配置信息
         """
         # 调用父类初始化方法，传入协调器和关联的协议
-        super().__init__(coordinator, description.key)
+        super().__init__(coordinator, description.data_protocol)
         # 保存实体描述对象
         self.entity_description = description
         # 设置实体的唯一标识符
-        self._attr_unique_id = f"{coordinator.model}_{description.key}"
+        self._attr_unique_id = f"{coordinator.model}_{description.data_protocol.lower()}"
     
     @property
     def native_value(self) -> Optional[Any]:

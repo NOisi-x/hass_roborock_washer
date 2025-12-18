@@ -358,13 +358,13 @@ class RoborockWasherSelect(RoborockWasherApiEntity, SelectEntity):
             description: 实体描述对象，定义实体的配置信息
         """
         # 调用父类初始化方法，传入协调器和关联的协议
-        protocol = description.data_protocol if description.data_protocol else description.key
-        super().__init__(coordinator, protocol)
+        super().__init__(coordinator, description.data_protocol)
         # 保存实体描述对象
         self.entity_description = description
         # 设置实体的唯一标识符
-        protocol_name = description.data_protocol.lower() if description.data_protocol else description.key
-        self._attr_unique_id = f"{coordinator.model}_{protocol_name}"
+        _LOGGER.debug("Creating select entity with data_protocol: %s, key: %s", description.data_protocol, description.key)
+        self._attr_unique_id = f"{coordinator.model}_{description.data_protocol.lower()}"
+        _LOGGER.debug("Select entity unique ID: %s", self._attr_unique_id)
         # 根据是否有翻译键设置实体名称
         if description.translation_key:
             self._attr_translation_key = description.translation_key
@@ -506,7 +506,7 @@ class RoborockWasherSelect(RoborockWasherApiEntity, SelectEntity):
             await super().async_set_value(value)
             
             # 对于所有选择实体，请求立即刷新此特定协议的状态
-            protocol_name = self.entity_description.data_protocol.lower() if self.entity_description.data_protocol else self.entity_description.key
+            protocol_name = self.entity_description.data_protocol.lower()
             _LOGGER.debug("Requesting immediate update for %s protocol", protocol_name)
             await self.coordinator.async_query_protocol(protocol_name)
             
