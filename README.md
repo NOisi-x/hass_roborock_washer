@@ -1,6 +1,6 @@
 # Roborock Washer 集成 - Home Assistant
 
-非码农，不懂代码，所有代码采用生成式API生成，依赖python-roborock库中的A01协议，感谢大佬的逆向工程。
+非码农，不懂代码，所有代码采用生成式AI生成，依赖python-roborock库中的A01协议，感谢大佬的逆向工程。
 Roborock的homeassistant官方集成只能显示洗衣机的4个传感器，此集成为补充，参考roboraock app添加了中文翻译。
 目前START，PAUSE，STOP按钮在洗衣机待机时有反应但无对应运行响应，手动打开洗衣机后可以正常操作，这个目前靠个人能力解决不了，希望有大佬能帮忙解决。
 
